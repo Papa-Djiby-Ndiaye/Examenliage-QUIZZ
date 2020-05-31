@@ -10,17 +10,17 @@
                     <form class="pr-5">
                         <div class="form-group mb-1">
                             <label class="m-0 p-1" for="prenom">Prenom</label>
-                            <input name="prenom" type="email" class="form-control" id="prenom">
+                            <input name="prenom" type="text" class="form-control" id="prenom">
                         </div>
 
                         <div class="form-group mb-1">
                             <label class="m-0 p-1" for="nom">Nom</label>
-                            <input name="nom" type="password" class="form-control" id="nom">
+                            <input name="nom" type="text" class="form-control" id="nom">
                         </div>
 
                         <div class="form-group  mb-1">
                             <label class="m-0 p-1" for="login">Login</label>
-                            <input name="login" type="password" class="form-control" id="login">
+                            <input name="login" type="login" class="form-control" id="login">
                         </div>
 
                         <div class="form-group mb-1">
