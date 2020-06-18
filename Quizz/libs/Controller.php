@@ -1,22 +1,28 @@
 <?php
+class Controller {
+    
+     protected $dirname;
+     protected $views;
+     protected $layout="layout_admin";
+     protected $validator;
+     protected $data=[];
+     protected $manager;
+     protected $managerQ;
 
-class Controller{
-    protected $validator;
-    protected $view;
-    protected $folder_view;
-    protected $layout;
-    //Variable qui permet stocker les données à afficher dans les vues
-    protected $data_view=[];
-    //Ecriture et l'execution des requetes
-    protected $manager;
+     function __construct(){
+        $this->validator=new Validator();
+        if(!isset($_SESSION['id'])){
+            $_SESSION['id']=0;
+           }
+     }
 
-    //  Afficher une vue
     public function render(){
         ob_start();
-        //Inclusion des données du Controller vers la vue
-        extract($this->data_view);
-        require_once('views/'.$this->folder_view.'/'.$this->view.'.php');
-        $content_for_layout=ob_get_clean();
-        require_once('views/layout/'.$this->layout.'.php');
-       }
+        extract($this->data);
+        require_once("views/".$this->dirname."/".$this->views.".php");
+        $content_for_layout= ob_get_clean();
+        require_once("views/layout/".$this->layout.".php");
+    }
+
+    
 }
